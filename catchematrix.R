@@ -1,15 +1,18 @@
 # creating makeCacheMatrix function to catche the inverse of 
 # part 1
+# set new function to catch the data
 makeCacheMatrix <- function(m = matrix()) {
   solve <- NULL
   set <- function(newmatrix) {
     m <<- newmatrix
     solve <<- NULL
   }
-  
-  get <- function() m
+  # we obtain original matrix data
+  get <- function() m  
+  # inverse of matrix data
   setinv <- function(inv) i <<- inv
   getinv <- function() i
+  # output return
   list(set = set, 
        get = get, 
        setinv = setinv, 
@@ -19,6 +22,7 @@ makeCacheMatrix <- function(m = matrix()) {
 
 # creating CacheSolve for the function above
 # part 2
+# inverse of our m
 
 cacheSolve <- function(x, ...) {
   inv <- x$getinv()
@@ -33,3 +37,4 @@ cacheSolve <- function(x, ...) {
 }
 
 # end
+
